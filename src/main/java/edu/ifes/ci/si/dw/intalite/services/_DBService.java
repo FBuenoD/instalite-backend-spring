@@ -41,15 +41,15 @@ public class _DBService {
 				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/perfil/perfil04.png")));
 
 		Postagem postagem1 = new Postagem(null, "Que mundo Belo!", usuario1, 3, "2020-08-10",
-				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img01.png")));
+				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img01.jpg")));
 		Postagem postagem2 = new Postagem(null, "Que mundo Lindo!", usuario2, 5, "2020-08-12",
-				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img02.png")));
+				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img02.jpg")));
 		Postagem postagem3 = new Postagem(null, "Que mundo Grande!", usuario3, 6, "2020-08-13",
-				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img03.png")));
+				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img03.jpg")));
 		Postagem postagem4 = new Postagem(null, "Que mundo Escuro!", usuario4, 8, "2020-08-14",
-				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img04.png")));
+				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img04.jpg")));
 		Postagem postagem5 = new Postagem(null, "Que mundo Claro!", usuario1, 10, "2020-08-15",
-				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img05.png")));
+				StreamUtils.copyToByteArray(getClass().getResourceAsStream("/static/images/postagem/img05.jpg")));
 
 		Comentario comentario1 = new Comentario(null, "Que Foto Maneira", postagem1, usuario1, "2020-08-10");
 		Comentario comentario2 = new Comentario(null, "Que Foto Legal", postagem1, usuario2, "2020-08-11");
