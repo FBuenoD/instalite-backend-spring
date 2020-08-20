@@ -65,7 +65,7 @@ public class UsuarioController {
 	 * Este método insere um usuario esperando receber dois parâmetros no Request:
 	 * artista: objeto usuario no formato de String JSON artistaImagem: File
 	 */
-	@RequestMapping(value = "/updatefile/{id}", method = RequestMethod.PUT, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@RequestMapping(value = "/updatefile/{id}", method = RequestMethod.PATCH, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity<Usuario> updatefile(String usuario,
 			@RequestParam("usuarioImagem") MultipartFile usuarioImagem) {
 		Usuario obj;
@@ -92,7 +92,7 @@ public class UsuarioController {
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "{id}", method = RequestMethod.PATCH)
 	public ResponseEntity<Usuario> update(@Valid @RequestBody Usuario obj, BindingResult br) {
 		if (br.hasErrors())
 			throw new ConstraintException(br.getAllErrors().get(0).getDefaultMessage());
@@ -100,7 +100,7 @@ public class UsuarioController {
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@RequestMapping(value = "/{id}", method = RequestMethod.PATCH, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity<Usuario> update(String usuario, @RequestParam("usuarioImagem") MultipartFile usuarioImagem) {
 		Usuario obj;
 		try {

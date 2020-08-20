@@ -66,7 +66,7 @@ public class PostagemController {
 	 * Este método insere um postagem esperando receber dois parâmetros no Request:
 	 * artista: objeto postagem no formato de String JSON artistaImagem: File
 	 */
-	@RequestMapping(value = "/updatefile/{id}", method = RequestMethod.PUT, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@RequestMapping(value = "/updatefile/{id}", method = RequestMethod.PATCH, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity<Postagem> updatefile(String postagem,
 			@RequestParam("postagemImagem") MultipartFile postagemImagem) {
 		Postagem obj;
@@ -93,7 +93,7 @@ public class PostagemController {
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "{id}", method = RequestMethod.PATCH)
 	public ResponseEntity<Postagem> update(@Valid @RequestBody Postagem obj, BindingResult br) {
 		if (br.hasErrors())
 			throw new ConstraintException(br.getAllErrors().get(0).getDefaultMessage());
@@ -101,7 +101,7 @@ public class PostagemController {
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@RequestMapping(value = "/{id}", method = RequestMethod.PATCH, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity<Postagem> update(String postagem,
 			@RequestParam("postagemImagem") MultipartFile postagemImagem) {
 		Postagem obj;
