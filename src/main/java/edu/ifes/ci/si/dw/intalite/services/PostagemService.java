@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import edu.ifes.ci.si.dw.intalite.model.Postagem;
@@ -30,7 +31,7 @@ public class PostagemService {
 	}
 
 	public Collection<Postagem> findAll() {
-		return repository.findAll();
+		return repository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 	}
 
 	public Postagem insert(final Postagem obj) {
